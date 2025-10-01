@@ -276,17 +276,10 @@ end
 # ║                       ALIASES                             ║
 # ╚═══════════════════════════════════════════════════════════╝
 
-# Navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
 # File operations
 alias fetch='neofetch'
-alias ls='lsd -a'
-alias ll='lsd -la'
 alias lt='lsd -a --tree'
-alias lf='exa -abghHliS'
+alias ls='exa -abghHliS'
 alias tree='exa --long --tree'
 alias c='clear'
 alias grep='grep --color=auto'
