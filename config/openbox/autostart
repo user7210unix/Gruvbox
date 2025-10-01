@@ -1,0 +1,4 @@
+~/.fehbg &
+arandr ~/.screenlayout/dual.sh &
+picom &
+
