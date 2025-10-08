@@ -477,6 +477,40 @@
   (global-anzu-mode +1)
   (custom-set-faces
    '(anzu-mode-line ((t (:foreground "#fabd2f" :weight bold))))))
+   
+   
+;==========================================================
+;   ORG MODE CONFIGURATION
+;==========================================================
+
+(use-package org
+  :ensure t
+  :hook (org-mode . visual-line-mode)
+  :config
+  ;; Automatisch .org-Dateien im Org-Mode öffnen
+  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+  ;; Schönere Darstellung
+  (setq org-hide-emphasis-markers t)     ; *fett* -> fett ohne Sternchen
+  (setq org-startup-indented t)          ; Einrückung für Unterpunkte
+  (setq org-startup-folded 'content)     ; Überschriften standardmäßig eingeklappt
+  (setq org-ellipsis " ▼ ")              ; hübscher Pfeil statt "..."
+  (setq org-pretty-entities t)           ; z. B. λ statt \lambda
+
+  ;; Schriftarten (passend zu deiner Gruvbox-Ästhetik)
+  (custom-set-faces
+   '(org-level-1 ((t (:foreground "#fabd2f" :height 1.3 :weight bold))))
+   '(org-level-2 ((t (:foreground "#fe8019" :height 1.2 :weight bold))))
+   '(org-level-3 ((t (:foreground "#b8bb26" :height 1.1))))
+   '(org-level-4 ((t (:foreground "#83a598"))))
+   '(org-document-title ((t (:foreground "#d3869b" :height 1.4 :weight bold))))
+   '(org-link ((t (:foreground "#83a598" :underline t))))
+   '(org-block ((t (:background "#3c3836" :extend t))))
+   '(org-block-begin-line ((t (:foreground "#928374" :background "#3c3836"))))
+   '(org-block-end-line ((t (:foreground "#928374" :background "#3c3836"))))))
+
+
+   
 
 ;==========================================================
 ;   KEYBINDINGS
@@ -563,3 +597,59 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(gnome-dark-style general anzu multiple-cursors smartparens undo-tree git-gutter all-the-icons doom-modeline highlight-indent-guides rainbow-delimiters vterm flycheck lsp-java lsp-ui lsp-mode company ivy-rich counsel ivy treemacs-magit treemacs-projectile treemacs-evil treemacs which-key evil-commentary evil-collection evil gruvbox-theme)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(anzu-mode-line ((t (:foreground "#fabd2f" :weight bold))))
+ '(company-tooltip ((t (:background "#3c3836" :foreground "#ebdbb2"))))
+ '(company-tooltip-annotation ((t (:foreground "#83a598"))))
+ '(company-tooltip-common ((t (:foreground "#d65d0e" :weight bold))))
+ '(company-tooltip-scrollbar-thumb ((t (:background "#928374"))))
+ '(company-tooltip-scrollbar-track ((t (:background "#3c3836"))))
+ '(company-tooltip-selection ((t (:background "#504945" :foreground "#fabd2f"))))
+ '(doom-modeline-bar ((t (:background "#d65d0e"))))
+ '(doom-modeline-buffer-file ((t (:foreground "#ebdbb2"))))
+ '(doom-modeline-buffer-modified ((t (:foreground "#fe8019" :weight bold))))
+ '(doom-modeline-lsp-success ((t (:foreground "#b8bb26"))))
+ '(doom-modeline-lsp-warning ((t (:foreground "#fabd2f"))))
+ '(doom-modeline-project-dir ((t (:foreground "#fabd2f" :weight bold))))
+ '(flycheck-error ((t (:underline (:color "#fb4934" :style wave)))))
+ '(flycheck-info ((t (:underline (:color "#83a598" :style wave)))))
+ '(flycheck-warning ((t (:underline (:color "#fabd2f" :style wave)))))
+ '(git-gutter:added ((t (:foreground "#b8bb26" :weight bold))))
+ '(git-gutter:deleted ((t (:foreground "#fb4934" :weight bold))))
+ '(git-gutter:modified ((t (:foreground "#d65d0e" :weight bold))))
+ '(highlight-indent-guides-character-face ((t (:foreground "#3c3836"))))
+ '(highlight-indent-guides-top-character-face ((t (:foreground "#d65d0e"))))
+ '(ivy-current-match ((t (:background "#3c3836" :foreground "#fabd2f" :weight bold))))
+ '(ivy-minibuffer-match-face-1 ((t (:foreground "#d65d0e"))))
+ '(ivy-minibuffer-match-face-2 ((t (:foreground "#fe8019" :weight bold))))
+ '(ivy-minibuffer-match-face-3 ((t (:foreground "#fabd2f" :weight bold))))
+ '(ivy-minibuffer-match-face-4 ((t (:foreground "#b8bb26" :weight bold))))
+ '(lsp-face-highlight-read ((t (:background "#3c3836" :underline t))))
+ '(lsp-face-highlight-textual ((t (:background "#3c3836"))))
+ '(lsp-face-highlight-write ((t (:background "#504945" :weight bold))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#fe8019"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#fabd2f"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#b8bb26"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#83a598"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#d3869b"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#8ec07c"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#d65d0e"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#d79921"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "#cc241d"))))
+ '(treemacs-directory-face ((t (:foreground "#83a598"))))
+ '(treemacs-file-face ((t (:foreground "#ebdbb2"))))
+ '(treemacs-git-added-face ((t (:foreground "#b8bb26"))))
+ '(treemacs-git-modified-face ((t (:foreground "#d65d0e"))))
+ '(treemacs-git-untracked-face ((t (:foreground "#928374"))))
+ '(treemacs-root-face ((t (:foreground "#fabd2f" :weight bold :height 1.2)))))
