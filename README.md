@@ -20,3 +20,8 @@
  - Launcher: Rofi ⚡
  - Terminal: Alacritty 🍃
  - Panel: Polybar ⚡
+
+## Font 
+1. https://fonts.google.com/specimen/M+PLUS+Code+Latin
+2. https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+   
