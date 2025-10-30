@@ -1,0 +1,135 @@
+#lacritty Configuration
+# Matching ST terminal with Gruvbox theme
+# Font: M PLUS Code Latin Semibold 14pt
+# Border: 16px padding
+
+[window]
+# Window padding (same as st borderpx = 16)
+padding.x = 16
+padding.y = 16
+
+# Window decorations
+decorations = "full"
+opacity = 1.0
+blur = false
+
+# Startup mode
+startup_mode = "Windowed"
+
+# Dynamic title
+dynamic_title = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+# M PLUS Code Latin Semibold 14pt (matching st config)
+normal.family = "M PLUS Code Latin"
+normal.style = "Semibold"
+
+bold.family = "M PLUS Code Latin"
+bold.style = "Bold"
+
+italic.family = "M PLUS Code Latin"
+italic.style = "Semibold Italic"
+
+bold_italic.family = "M PLUS Code Latin"
+bold_italic.style = "Bold Italic"
+
+size = 14.0
+
+# Offset is the extra space around each character
+offset.x = 0
+offset.y = 0
+
+# Glyph offset determines the locations of the glyphs within their cells
+glyph_offset.x = 0
+glyph_offset.y = 0
+
+# Better rendering
+builtin_box_drawing = true
+
+[colors]
+# Gruvbox Dark color scheme (matching st config exactly)
+
+[colors.primary]
+background = "#282828"  # colorname[256]
+foreground = "#ebdbb2"  # colorname[257]
+
+[colors.cursor]
+text = "#282828"
+cursor = "#ebdbb2"
+
+[colors.vi_mode_cursor]
+text = "#282828"
+cursor = "#ebdbb2"
+
+[colors.selection]
+text = "CellForeground"
+background = "#3c3836"
+
+[colors.normal]
+black   = "#282828"  # colorname[0]
+red     = "#cc241d"  # colorname[1]
+green   = "#98971a"  # colorname[2]
+yellow  = "#d79921"  # colorname[3]
+blue    = "#458588"  # colorname[4]
+magenta = "#b16286"  # colorname[5]
+cyan    = "#689d6a"  # colorname[6]
+white   = "#a89984"  # colorname[7]
+
+[colors.bright]
+black   = "#928374"  # colorname[8]
+red     = "#fb4934"  # colorname[9]
+green   = "#b8bb26"  # colorname[10]
+yellow  = "#fabd2f"  # colorname[11]
+blue    = "#83a598"  # colorname[12]
+magenta = "#d3869b"  # colorname[13]
+cyan    = "#8ec07c"  # colorname[14]
+white   = "#ebdbb2"  # colorname[15]
+
+[cursor]
+# Cursor style (matching st cursorshape = 2, which is Block)
+style.shape = "Block"
+style.blinking = "Off"
+thickness = 0.15
+unfocused_hollow = true
+
+[bell]
+# Bell settings (matching st bellvolume = 0, disabled)
+animation = "EaseOutExpo"
+duration = 0
+color = "#ffffff"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
+
+[keyboard]
+# Key bindings for common actions
+bindings = [
+    # Clipboard
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    
+    # Font size control (matching st zoom controls)
+    { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+    { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+    { key = "Key0", mods = "Control", action = "ResetFontSize" },
+    
+    # Scrolling
+    { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+    { key = "Home", mods = "Shift", action = "ScrollToTop" },
+    { key = "End", mods = "Shift", action = "ScrollToBottom" },
+]
+
+[env]
+# Terminal identification (matching st termname = "st-256color")
+TERM = "alacritty"
+
+
